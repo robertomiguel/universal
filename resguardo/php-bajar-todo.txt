@@ -1,0 +1,8 @@
+mysqldump --complete-insert --no-create-info -u universal --password=universal --opt universal provincia>/home/roberto/universal/resguardo/provincia.sql;
+mysqldump --complete-insert --no-create-info -u universal --password=universal --opt universal localidad>/home/roberto/universal/resguardo/localidad.sql;
+mysqldump --complete-insert --no-create-info -u universal --password=universal --opt universal suscriptor>/home/roberto/universal/resguardo/suscriptor.sql;
+mysqldump --complete-insert --no-create-info -u universal --password=universal --opt universal productor>/home/roberto/universal/resguardo/productor.sql;
+mysqldump --complete-insert --no-create-info -u universal --password=universal --opt universal suscripcion>/home/roberto/universal/resguardo/suscripcion.sql;
+mysqldump --complete-insert --no-create-info -u universal --password=universal --opt universal cuota>/home/roberto/universal/resguardo/cuota.sql;
+mysqldump --complete-insert --no-create-info -u universal --password=universal --opt universal sf_guard_user>/home/roberto/universal/resguardo/sfguarduser.sql;
+zip /home/roberto/universal/resguardo/hoy.zip /home/roberto/universal/resguardo/*.sql

@@ -1,0 +1,55 @@
+* { margin: -3mm; padding: 0}
+.imprimir {display: block !important}
+
+.salto {page-break-before: always;}
+
+.detalle {display:none !important}
+#sfWebDebug {display:none !important}
+.ZebraDialog {display:none !important}
+
+.imprimir * {font-size: 3mm;position:absolute}
+
+.fecha1 	{top:46mm;left:162mm}
+.nombre1 	{top:70mm;left:42mm}
+.direccion1 	{top:75mm;left:42mm}
+.telefono1 	{top:75mm;left:135mm}
+.localidad1 	{top:80mm;left:42mm}
+.valorletra1	{top:92mm;left:50mm}
+.plan1 		{top:102mm;left:61mm}
+.cuotames1 	{top:111mm;left:55mm}
+.sorteo1 	{top:111mm;left:123mm}
+.solicitud1 	{top:111mm;left:168mm}
+.vcuota1 	{top:121mm;left:60mm}
+.diavence1 	{top:131mm;left:60mm}
+.avisodebe1 	{top:145mm;left:30mm}
+
+.fecha2 	{top:200mm;left:162mm}
+.nombre2 	{top:222mm;left:42mm}
+.direccion2 	{top:227mm;left:42mm}
+.telefono2 	{top:227mm;left:135mm}
+.localidad2 	{top:232mm;left:42mm}
+.plan2 		{top:240mm;left:80mm}
+.mespago 	{top:240mm;left:140mm}
+.sorteo2 	{top:248mm;left:80mm}
+.solicitud2 	{top:248mm;left:130mm}
+.vcuota2 	{top:248mm;left:174mm}
+
+.fecha3 	{top:270mm;left:162mm}
+.plan3 		{top:310mm;left:80mm}
+.mespago3 	{top:310mm;left:140mm}
+.sorteo3 	{top:319mm;left:80mm}
+.solicitud3 	{top:319mm;left:130mm}
+.vcuota3 	{top:319mm;left:174mm}
+
+.sobre {
+top:20mm;left:20mm;font-size: 3mm;
+transform-origin:0% 0%;
+-moz-transform-origin: 0% 0%;
+-webkit-transform-origin: 0% 0%;
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+-o-transform: rotate(90deg);
+}
+
+.sobre * {position:relative;}
+

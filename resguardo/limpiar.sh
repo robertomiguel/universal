@@ -1,0 +1,2 @@
+rm *.sql
+rm *.zip

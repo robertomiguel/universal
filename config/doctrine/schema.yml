@@ -1,0 +1,77 @@
+---
+provincia:
+  columns:
+    nombre:       { type: string(50), notnull: true }
+
+localidad:
+  columns:
+    provincia_id: { type: integer, notnull: true }
+    nombre:       { type: string(50), notnull: true }
+    cp:           { type: string(4), notnull: true }
+  relations:
+    provincia:    { onDelete: CASCADE, local: provincia_id, foreign: id, foreignAlias: provAlias }
+
+suscriptor:
+  actAs: { Timestampable: ~ }
+  columns:
+    localidad_id: { type: integer, notnull: true }
+    dni:          { type: string(8), notnull: true, unique: true }
+    apellido:     { type: string(50), notnull: true }
+    nombre:       { type: string(50), notnull: true }
+    domicilio:    { type: string(100), notnull: true }
+    tel:          { type: string(30) }
+    celular:      { type: string(30) }
+    conyuge:      { type: string(100) }
+    activo:       { type: boolean, notnull: true, default: 1 }
+    obs:          { type: string(255) }
+    sf_guard_user_id: { type: integer }
+  relations:
+    User:        { class: sfGuardUser, foreignType: one }
+    localidad: { onDelete: CASCADE, local: localidad_id, foreign: id }
+
+productor:
+  actAs: { Timestampable: ~ }
+  columns:
+    localidad_id: { type: integer, notnull: true }
+    codigo:       { type: string(10) , unique: true }
+    zona:         { type: string(20) }
+    apellido:     { type: string(50), notnull: true }
+    nombre:       { type: string(50), notnull: true }
+    domicilio:    { type: string(100), notnull: true }
+    tel:          { type: string(20) }
+    celular:      { type: string(20) }
+  relations:
+    localidad: { onDelete: CASCADE, local: localidad_id, foreign: id }
+    
+suscripcion:
+  actAs: { Timestampable: ~ }
+  columns:
+    fecha_alta:    { type: date }
+    fecha_vence:   { type: date }
+    fecha_baja:    { type: date }
+    nro:           { type: integer, notnull: true, unique: true}
+    suscriptor_id: { type: integer, notnull: true }
+    productor_id:  { type: integer, notnull: true }
+    codigo:        { type: string(5) }
+    diacobro:      { type: string(50) }
+    plan:          { type: string(100), notnull: true }
+    valor_cuota:   { type: decimal(10), scale: 2, default: 0 }
+    cant_cuotas:   { type: integer, default: 0 }
+    sorteo:        { type: string(3)}
+    obs:           { type: string(255) }
+  relations:
+    suscriptor: { onDelete: CASCADE, local: suscriptor_id, foreign: id }
+    productor:  { onDelete: CASCADE, local: productor_id, foreign: id }
+    
+cuota:
+  actAs: { Timestampable: ~ }
+  columns:
+    suscripcion_id: { type: integer, notnull: true }
+    nro_cuota:      { type: integer, notnull: true }
+    importe:        { type: decimal(10), scale: 2, default: 0 }
+    femision:       { type: date }
+    fvencimiento:   { type: date }
+    fpago:          { type: date }
+    impresa:        { type: boolean, notnull: true, default: false }
+  relations:
+    suscripcion: { onDelete: CASCADE, local: suscripcion_id, foreign: id, foreignAlias: suscripAlias }
