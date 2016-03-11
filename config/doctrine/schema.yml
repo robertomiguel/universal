@@ -25,6 +25,14 @@ suscriptor:
     activo:       { type: boolean, notnull: true, default: 1 }
     obs:          { type: string(255) }
     sf_guard_user_id: { type: integer }
+    usr_nombre:           { type: string(50) }
+    usr_clave:            { type: string(50) }
+    usr_recordar_token:   { type: string(100) }
+    usr_estado:           { type: integer }
+    usr_permiso:          { type: integer }
+    usr_grupo:            { type: integer }
+    usr_fecha_acceso:     { type: date }
+    usr_ip:               { type: string(20) }
   relations:
     User:        { class: sfGuardUser, foreignType: one }
     localidad: { onDelete: CASCADE, local: localidad_id, foreign: id }

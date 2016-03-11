@@ -46,6 +46,24 @@
       <th>Activo:</th>
       <td><?php echo Formatos::siono($suscriptor->getActivo()) ?></td>
     </tr>
+        <tr>
+      <td colspan="2"><hr></td>
+    </tr>
+    <tr>
+      <th>Usuario Web</th>
+      <td><?php echo $suscriptor->getUsrNombre() ?></td>
+    </tr>
+    <tr>
+      <th>Clave</th>
+      <td><?php echo $suscriptor->getUsrClave() ?></td>
+    </tr>
+    <tr>
+      <th>Estado Web</th>
+      <td><?php if ($suscriptor->getUsrEstado()==1){
+                  echo 'Activo';
+        } else {echo 'sin acceso';} ?></td>
+    </tr>
+
   </tbody>
 </table>
 

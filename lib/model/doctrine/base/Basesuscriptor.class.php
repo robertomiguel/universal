@@ -16,38 +16,62 @@
  * @property boolean $activo
  * @property string $obs
  * @property integer $sf_guard_user_id
+ * @property string $usr_nombre
+ * @property string $usr_clave
+ * @property string $usr_recordar_token
+ * @property integer $usr_estado
+ * @property integer $usr_permiso
+ * @property integer $usr_grupo
+ * @property date $usr_fecha_acceso
+ * @property string $usr_ip
  * @property sfGuardUser $User
  * @property localidad $localidad
  * @property Doctrine_Collection $suscripcion
  * 
- * @method integer             getLocalidadId()      Returns the current record's "localidad_id" value
- * @method string              getDni()              Returns the current record's "dni" value
- * @method string              getApellido()         Returns the current record's "apellido" value
- * @method string              getNombre()           Returns the current record's "nombre" value
- * @method string              getDomicilio()        Returns the current record's "domicilio" value
- * @method string              getTel()              Returns the current record's "tel" value
- * @method string              getCelular()          Returns the current record's "celular" value
- * @method string              getConyuge()          Returns the current record's "conyuge" value
- * @method boolean             getActivo()           Returns the current record's "activo" value
- * @method string              getObs()              Returns the current record's "obs" value
- * @method integer             getSfGuardUserId()    Returns the current record's "sf_guard_user_id" value
- * @method sfGuardUser         getUser()             Returns the current record's "User" value
- * @method localidad           getLocalidad()        Returns the current record's "localidad" value
- * @method Doctrine_Collection getSuscripcion()      Returns the current record's "suscripcion" collection
- * @method suscriptor          setLocalidadId()      Sets the current record's "localidad_id" value
- * @method suscriptor          setDni()              Sets the current record's "dni" value
- * @method suscriptor          setApellido()         Sets the current record's "apellido" value
- * @method suscriptor          setNombre()           Sets the current record's "nombre" value
- * @method suscriptor          setDomicilio()        Sets the current record's "domicilio" value
- * @method suscriptor          setTel()              Sets the current record's "tel" value
- * @method suscriptor          setCelular()          Sets the current record's "celular" value
- * @method suscriptor          setConyuge()          Sets the current record's "conyuge" value
- * @method suscriptor          setActivo()           Sets the current record's "activo" value
- * @method suscriptor          setObs()              Sets the current record's "obs" value
- * @method suscriptor          setSfGuardUserId()    Sets the current record's "sf_guard_user_id" value
- * @method suscriptor          setUser()             Sets the current record's "User" value
- * @method suscriptor          setLocalidad()        Sets the current record's "localidad" value
- * @method suscriptor          setSuscripcion()      Sets the current record's "suscripcion" collection
+ * @method integer             getLocalidadId()        Returns the current record's "localidad_id" value
+ * @method string              getDni()                Returns the current record's "dni" value
+ * @method string              getApellido()           Returns the current record's "apellido" value
+ * @method string              getNombre()             Returns the current record's "nombre" value
+ * @method string              getDomicilio()          Returns the current record's "domicilio" value
+ * @method string              getTel()                Returns the current record's "tel" value
+ * @method string              getCelular()            Returns the current record's "celular" value
+ * @method string              getConyuge()            Returns the current record's "conyuge" value
+ * @method boolean             getActivo()             Returns the current record's "activo" value
+ * @method string              getObs()                Returns the current record's "obs" value
+ * @method integer             getSfGuardUserId()      Returns the current record's "sf_guard_user_id" value
+ * @method string              getUsrNombre()          Returns the current record's "usr_nombre" value
+ * @method string              getUsrClave()           Returns the current record's "usr_clave" value
+ * @method string              getUsrRecordarToken()   Returns the current record's "usr_recordar_token" value
+ * @method integer             getUsrEstado()          Returns the current record's "usr_estado" value
+ * @method integer             getUsrPermiso()         Returns the current record's "usr_permiso" value
+ * @method integer             getUsrGrupo()           Returns the current record's "usr_grupo" value
+ * @method date                getUsrFechaAcceso()     Returns the current record's "usr_fecha_acceso" value
+ * @method string              getUsrIp()              Returns the current record's "usr_ip" value
+ * @method sfGuardUser         getUser()               Returns the current record's "User" value
+ * @method localidad           getLocalidad()          Returns the current record's "localidad" value
+ * @method Doctrine_Collection getSuscripcion()        Returns the current record's "suscripcion" collection
+ * @method suscriptor          setLocalidadId()        Sets the current record's "localidad_id" value
+ * @method suscriptor          setDni()                Sets the current record's "dni" value
+ * @method suscriptor          setApellido()           Sets the current record's "apellido" value
+ * @method suscriptor          setNombre()             Sets the current record's "nombre" value
+ * @method suscriptor          setDomicilio()          Sets the current record's "domicilio" value
+ * @method suscriptor          setTel()                Sets the current record's "tel" value
+ * @method suscriptor          setCelular()            Sets the current record's "celular" value
+ * @method suscriptor          setConyuge()            Sets the current record's "conyuge" value
+ * @method suscriptor          setActivo()             Sets the current record's "activo" value
+ * @method suscriptor          setObs()                Sets the current record's "obs" value
+ * @method suscriptor          setSfGuardUserId()      Sets the current record's "sf_guard_user_id" value
+ * @method suscriptor          setUsrNombre()          Sets the current record's "usr_nombre" value
+ * @method suscriptor          setUsrClave()           Sets the current record's "usr_clave" value
+ * @method suscriptor          setUsrRecordarToken()   Sets the current record's "usr_recordar_token" value
+ * @method suscriptor          setUsrEstado()          Sets the current record's "usr_estado" value
+ * @method suscriptor          setUsrPermiso()         Sets the current record's "usr_permiso" value
+ * @method suscriptor          setUsrGrupo()           Sets the current record's "usr_grupo" value
+ * @method suscriptor          setUsrFechaAcceso()     Sets the current record's "usr_fecha_acceso" value
+ * @method suscriptor          setUsrIp()              Sets the current record's "usr_ip" value
+ * @method suscriptor          setUser()               Sets the current record's "User" value
+ * @method suscriptor          setLocalidad()          Sets the current record's "localidad" value
+ * @method suscriptor          setSuscripcion()        Sets the current record's "suscripcion" collection
  * 
  * @package    universal
  * @subpackage model
@@ -107,6 +131,34 @@ abstract class Basesuscriptor extends sfDoctrineRecord
              ));
         $this->hasColumn('sf_guard_user_id', 'integer', null, array(
              'type' => 'integer',
+             ));
+        $this->hasColumn('usr_nombre', 'string', 50, array(
+             'type' => 'string',
+             'length' => 50,
+             ));
+        $this->hasColumn('usr_clave', 'string', 50, array(
+             'type' => 'string',
+             'length' => 50,
+             ));
+        $this->hasColumn('usr_recordar_token', 'string', 100, array(
+             'type' => 'string',
+             'length' => 100,
+             ));
+        $this->hasColumn('usr_estado', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('usr_permiso', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('usr_grupo', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('usr_fecha_acceso', 'date', null, array(
+             'type' => 'date',
+             ));
+        $this->hasColumn('usr_ip', 'string', 20, array(
+             'type' => 'string',
+             'length' => 20,
              ));
     }
 
