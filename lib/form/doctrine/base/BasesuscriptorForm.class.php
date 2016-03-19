@@ -65,7 +65,10 @@ abstract class BasesuscriptorForm extends BaseFormDoctrine
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'suscriptor', 'column' => array('dni')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'suscriptor', 'column' => array('dni'))),
+        new sfValidatorDoctrineUnique(array('model' => 'suscriptor', 'column' => array('usr_nombre'))),
+      ))
     );
 
     $this->widgetSchema->setNameFormat('suscriptor[%s]');

@@ -134,6 +134,7 @@ abstract class Basesuscriptor extends sfDoctrineRecord
              ));
         $this->hasColumn('usr_nombre', 'string', 50, array(
              'type' => 'string',
+             'unique' => true,
              'length' => 50,
              ));
         $this->hasColumn('usr_clave', 'string', 50, array(
