@@ -18,6 +18,9 @@ $this->widgetSchema['activo'] = new sfWidgetFormInputHidden();
 $this->widgetSchema['obs'] = new sfWidgetFormInputHidden();
 $this->widgetSchema['sf_guard_user_id'] = new sfWidgetFormInputHidden();
 
+$years = range(date('Y'), 1900);
+$this->widgetSchema['nacimiento'] = new sfWidgetFormDate(array('format' => '%day%/%month%/%year%',
+'years'=>array_combine($years, $years)));
 
 $this->setDefault('created_at', date("Y-m-d G:i"));
 $this->setDefault('updated_at', date("Y-m-d G:i"));

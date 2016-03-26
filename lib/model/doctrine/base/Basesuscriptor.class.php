@@ -9,6 +9,7 @@
  * @property string $dni
  * @property string $apellido
  * @property string $nombre
+ * @property date $nacimiento
  * @property string $domicilio
  * @property string $tel
  * @property string $celular
@@ -32,6 +33,7 @@
  * @method string              getDni()                Returns the current record's "dni" value
  * @method string              getApellido()           Returns the current record's "apellido" value
  * @method string              getNombre()             Returns the current record's "nombre" value
+ * @method date                getNacimiento()         Returns the current record's "nacimiento" value
  * @method string              getDomicilio()          Returns the current record's "domicilio" value
  * @method string              getTel()                Returns the current record's "tel" value
  * @method string              getCelular()            Returns the current record's "celular" value
@@ -54,6 +56,7 @@
  * @method suscriptor          setDni()                Sets the current record's "dni" value
  * @method suscriptor          setApellido()           Sets the current record's "apellido" value
  * @method suscriptor          setNombre()             Sets the current record's "nombre" value
+ * @method suscriptor          setNacimiento()         Sets the current record's "nacimiento" value
  * @method suscriptor          setDomicilio()          Sets the current record's "domicilio" value
  * @method suscriptor          setTel()                Sets the current record's "tel" value
  * @method suscriptor          setCelular()            Sets the current record's "celular" value
@@ -102,6 +105,9 @@ abstract class Basesuscriptor extends sfDoctrineRecord
              'type' => 'string',
              'notnull' => true,
              'length' => 50,
+             ));
+        $this->hasColumn('nacimiento', 'date', null, array(
+             'type' => 'date',
              ));
         $this->hasColumn('domicilio', 'string', 100, array(
              'type' => 'string',

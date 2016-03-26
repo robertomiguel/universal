@@ -16,6 +16,10 @@
       <td><?php echo Formatos::dni($suscriptor->getDni()) ?></td>
     </tr>
     <tr>
+      <th>Fecha Nacimiento:</th>
+      <td><?php echo Formatos::fecha($suscriptor->getNacimiento()) ?></td>
+    </tr>
+    <tr>
       <th style="width:200px">Cód. Postal:</th><td><?php echo $suscriptor->getLocalidad()->getCp(); ?></td>
     </tr>
     <tr>

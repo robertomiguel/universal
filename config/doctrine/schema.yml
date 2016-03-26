@@ -18,6 +18,7 @@ suscriptor:
     dni:          { type: string(8), notnull: true, unique: true }
     apellido:     { type: string(50), notnull: true }
     nombre:       { type: string(50), notnull: true }
+    nacimiento:   { type: date }
     domicilio:    { type: string(100), notnull: true }
     tel:          { type: string(30) }
     celular:      { type: string(30) }
@@ -83,3 +84,8 @@ cuota:
     impresa:        { type: boolean, notnull: true, default: false }
   relations:
     suscripcion: { onDelete: CASCADE, local: suscripcion_id, foreign: id, foreignAlias: suscripAlias }
+
+informectb:
+  columns:
+    fecha_informe: { type: date }
+    suscripcion_id:  { type: integer, notnull: true }
