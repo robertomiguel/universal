@@ -151,6 +151,8 @@ public function executeListadomes(sfWebRequest $request){
     if ($form->isValid())
     {
       $suscripcion = $form->save();
+      $suscripcion->setUsuarioId( $this->getUser()->getGuardUser()->getId() );
+      $suscripcion->save();
       $id = $suscripcion->getId();
 
 //     $this->redirect('suscripcion/show?id='.$suscripcion->getId());

@@ -13,6 +13,7 @@
  * @property string $domicilio
  * @property string $tel
  * @property string $celular
+ * @property integer $usuario_id
  * @property localidad $localidad
  * @property Doctrine_Collection $suscripcion
  * 
@@ -24,6 +25,7 @@
  * @method string              getDomicilio()    Returns the current record's "domicilio" value
  * @method string              getTel()          Returns the current record's "tel" value
  * @method string              getCelular()      Returns the current record's "celular" value
+ * @method integer             getUsuarioId()    Returns the current record's "usuario_id" value
  * @method localidad           getLocalidad()    Returns the current record's "localidad" value
  * @method Doctrine_Collection getSuscripcion()  Returns the current record's "suscripcion" collection
  * @method productor           setLocalidadId()  Sets the current record's "localidad_id" value
@@ -34,6 +36,7 @@
  * @method productor           setDomicilio()    Sets the current record's "domicilio" value
  * @method productor           setTel()          Sets the current record's "tel" value
  * @method productor           setCelular()      Sets the current record's "celular" value
+ * @method productor           setUsuarioId()    Sets the current record's "usuario_id" value
  * @method productor           setLocalidad()    Sets the current record's "localidad" value
  * @method productor           setSuscripcion()  Sets the current record's "suscripcion" collection
  * 
@@ -82,6 +85,9 @@ abstract class Baseproductor extends sfDoctrineRecord
         $this->hasColumn('celular', 'string', 20, array(
              'type' => 'string',
              'length' => 20,
+             ));
+        $this->hasColumn('usuario_id', 'integer', null, array(
+             'type' => 'integer',
              ));
     }
 

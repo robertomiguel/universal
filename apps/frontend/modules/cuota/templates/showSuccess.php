@@ -21,6 +21,12 @@
       <th>Fecha Pago:</th>
       <td><?php echo Formatos::fecha($cuota->getFpago()) ?></td>
     </tr>
+    <tr>
+        <th>Usuario Modifica:</th>
+        <td>
+            <?php echo Formatos::usuarioNombre($cuota->getUsuarioId()); ?>
+        </td>
+    </tr>
   </tbody>
 </table>
 

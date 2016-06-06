@@ -24,6 +24,7 @@ abstract class BaseproductorForm extends BaseFormDoctrine
       'domicilio'    => new sfWidgetFormInputText(),
       'tel'          => new sfWidgetFormInputText(),
       'celular'      => new sfWidgetFormInputText(),
+      'usuario_id'   => new sfWidgetFormInputText(),
       'created_at'   => new sfWidgetFormDateTime(),
       'updated_at'   => new sfWidgetFormDateTime(),
     ));
@@ -38,6 +39,7 @@ abstract class BaseproductorForm extends BaseFormDoctrine
       'domicilio'    => new sfValidatorString(array('max_length' => 100)),
       'tel'          => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'celular'      => new sfValidatorString(array('max_length' => 20, 'required' => false)),
+      'usuario_id'   => new sfValidatorInteger(array('required' => false)),
       'created_at'   => new sfValidatorDateTime(),
       'updated_at'   => new sfValidatorDateTime(),
     ));

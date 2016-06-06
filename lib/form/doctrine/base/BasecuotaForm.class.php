@@ -23,6 +23,7 @@ abstract class BasecuotaForm extends BaseFormDoctrine
       'fvencimiento'   => new sfWidgetFormDate(),
       'fpago'          => new sfWidgetFormDate(),
       'impresa'        => new sfWidgetFormInputCheckbox(),
+      'usuario_id'     => new sfWidgetFormInputText(),
       'created_at'     => new sfWidgetFormDateTime(),
       'updated_at'     => new sfWidgetFormDateTime(),
     ));
@@ -36,6 +37,7 @@ abstract class BasecuotaForm extends BaseFormDoctrine
       'fvencimiento'   => new sfValidatorDate(array('required' => false)),
       'fpago'          => new sfValidatorDate(array('required' => false)),
       'impresa'        => new sfValidatorBoolean(array('required' => false)),
+      'usuario_id'     => new sfValidatorInteger(array('required' => false)),
       'created_at'     => new sfValidatorDateTime(),
       'updated_at'     => new sfValidatorDateTime(),
     ));

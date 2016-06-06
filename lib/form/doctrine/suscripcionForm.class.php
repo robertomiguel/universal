@@ -18,6 +18,8 @@ $this->setDefault('created_at', date("Y-m-d G:i"));
 $this->setDefault('updated_at', date("Y-m-d G:i"));
 $this->widgetSchema['codigo'] = new sfWidgetFormInputHidden();
 
+$this->widgetSchema['usuario_id'] = new sfWidgetFormInputHidden();
+
 //$this->widgetSchema['valor_cuota'] = new sfWidgetFormInput(array(), array('onKeyUp'=>'valorNominal(this)'));
 //$this->widgetSchema['cant_cuotas'] = new sfWidgetFormInput(array(), array('onKeyUp'=>'valorCuota(this)'));
 //$this->widgetSchema['valor_nominal'] = new sfWidgetFormInput(array(), array('onKeyUp'=>'valorCuota2(this)'));
@@ -47,6 +49,7 @@ $this->setDefault('fecha_vence', date("$anio-$mes-15"));
 $this->widgetSchema['obs'] = new sfWidgetFormTextarea();
 
 $id = sfContext::getInstance()->getRequest()->getParameter('id');
+
 
 //$this->setDefault('fecha_vence', '15');
 //unSet($this['fecha_vence']);

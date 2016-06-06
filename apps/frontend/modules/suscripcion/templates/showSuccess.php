@@ -38,6 +38,11 @@
       <td><?php echo $suscripcion->getSorteo() ?></td>
     </tr>
     <tr>
+      <th>Usuario Modifica:</th>
+      <td><?php echo Formatos::usuarioNombre($suscripcion->getUsuarioId()); ?>
+      </td>
+    </tr>
+    <tr>
       <th>Observaciones:</th>
       <td><textarea readonly><?php echo $suscripcion->getObs() ?></textarea></td>
     </tr>

@@ -18,10 +18,16 @@ class suscriptorActions extends sfActions
     $this->totalinactivos =  Doctrine::getTable('suscriptor')->getInactivos();
     $this->totales =  Doctrine::getTable('suscriptor')->getTotales();
     $this->activos = $this->totales - $this->totalinactivos;
-  if ($request->getParameter('ver')=="inactivos") {
-    $this->respuesta =  Doctrine::getTable('suscriptor')->verActivos(0);return;}
-  if ($request->getParameter('ver')=="activos") {
-    $this->respuesta =  Doctrine::getTable('suscriptor')->verActivos(1);return;}
+    
+    if ($request->getParameter('ver')=="inactivos")
+    {
+      $this->respuesta =  Doctrine::getTable('suscriptor')->verActivos(0);return;
+    }
+    
+    if ($request->getParameter('ver')=="activos")
+    {
+      $this->respuesta =  Doctrine::getTable('suscriptor')->verActivos(1);return;
+    }
 
     $this->respuesta =  Doctrine::getTable('suscriptor')->getResultado($request->getParameter('buscar'));
   }
@@ -82,23 +88,25 @@ class suscriptorActions extends sfActions
     if ($form->isValid())
     {
       $suscriptor = $form->save();
+      $suscriptor->setUsuarioId( $this->getUser()->getGuardUser()->getId() );
+      $suscriptor->save();
 
-//      $this->redirect('suscriptor/show?id='.$suscriptor->getId());
+    //      $this->redirect('suscriptor/show?id='.$suscriptor->getId());
       $this->redirect('suscriptor/index');
     }
   }
 
 //------------ autocompletado
-public function executeBuscarSuscriptor(sfWebRequest $request)
-{
-    $this->getResponse()->setContentType('application/json');
- 
-    $suscriptor = Doctrine::getTable('suscriptor')
-                    ->retrieveForSelect(
-                            $request->getParameter('q'),
-                            $request->getParameter('limit')
-    );
- 
-  return $this->renderText(json_encode($suscriptor));
-}
+  public function executeBuscarSuscriptor(sfWebRequest $request)
+  {
+      $this->getResponse()->setContentType('application/json');
+   
+      $suscriptor = Doctrine::getTable('suscriptor')
+                      ->retrieveForSelect(
+                              $request->getParameter('q'),
+                              $request->getParameter('limit')
+      );
+   
+    return $this->renderText(json_encode($suscriptor));
+  }
 }

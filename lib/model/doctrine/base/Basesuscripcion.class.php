@@ -18,6 +18,7 @@
  * @property integer $cant_cuotas
  * @property string $sorteo
  * @property string $obs
+ * @property integer $usuario_id
  * @property suscriptor $suscriptor
  * @property productor $productor
  * @property Doctrine_Collection $suscripAlias
@@ -35,6 +36,7 @@
  * @method integer             getCantCuotas()    Returns the current record's "cant_cuotas" value
  * @method string              getSorteo()        Returns the current record's "sorteo" value
  * @method string              getObs()           Returns the current record's "obs" value
+ * @method integer             getUsuarioId()     Returns the current record's "usuario_id" value
  * @method suscriptor          getSuscriptor()    Returns the current record's "suscriptor" value
  * @method productor           getProductor()     Returns the current record's "productor" value
  * @method Doctrine_Collection getSuscripAlias()  Returns the current record's "suscripAlias" collection
@@ -51,6 +53,7 @@
  * @method suscripcion         setCantCuotas()    Sets the current record's "cant_cuotas" value
  * @method suscripcion         setSorteo()        Sets the current record's "sorteo" value
  * @method suscripcion         setObs()           Sets the current record's "obs" value
+ * @method suscripcion         setUsuarioId()     Sets the current record's "usuario_id" value
  * @method suscripcion         setSuscriptor()    Sets the current record's "suscriptor" value
  * @method suscripcion         setProductor()     Sets the current record's "productor" value
  * @method suscripcion         setSuscripAlias()  Sets the current record's "suscripAlias" collection
@@ -117,6 +120,9 @@ abstract class Basesuscripcion extends sfDoctrineRecord
         $this->hasColumn('obs', 'string', 255, array(
              'type' => 'string',
              'length' => 255,
+             ));
+        $this->hasColumn('usuario_id', 'integer', null, array(
+             'type' => 'integer',
              ));
     }
 

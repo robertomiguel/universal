@@ -29,6 +29,7 @@ abstract class BasesuscripcionForm extends BaseFormDoctrine
       'cant_cuotas'   => new sfWidgetFormInputText(),
       'sorteo'        => new sfWidgetFormInputText(),
       'obs'           => new sfWidgetFormInputText(),
+      'usuario_id'    => new sfWidgetFormInputText(),
       'created_at'    => new sfWidgetFormDateTime(),
       'updated_at'    => new sfWidgetFormDateTime(),
     ));
@@ -48,6 +49,7 @@ abstract class BasesuscripcionForm extends BaseFormDoctrine
       'cant_cuotas'   => new sfValidatorInteger(array('required' => false)),
       'sorteo'        => new sfValidatorString(array('max_length' => 3, 'required' => false)),
       'obs'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'usuario_id'    => new sfValidatorInteger(array('required' => false)),
       'created_at'    => new sfValidatorDateTime(),
       'updated_at'    => new sfValidatorDateTime(),
     ));

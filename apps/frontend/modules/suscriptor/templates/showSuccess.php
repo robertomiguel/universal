@@ -50,7 +50,12 @@
       <th>Activo:</th>
       <td><?php echo Formatos::siono($suscriptor->getActivo()) ?></td>
     </tr>
-        <tr>
+    <tr>
+      <th>Usuario Modifica:</th>
+      <td><?php echo Formatos::usuarioNombre($suscriptor->getUsuarioId()); ?>
+      </td>
+    </tr>
+    <tr>
       <td colspan="2"><hr></td>
     </tr>
     <tr>

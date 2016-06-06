@@ -36,6 +36,7 @@ abstract class BasesuscriptorForm extends BaseFormDoctrine
       'usr_grupo'          => new sfWidgetFormInputText(),
       'usr_fecha_acceso'   => new sfWidgetFormDate(),
       'usr_ip'             => new sfWidgetFormInputText(),
+      'usuario_id'         => new sfWidgetFormInputText(),
       'created_at'         => new sfWidgetFormDateTime(),
       'updated_at'         => new sfWidgetFormDateTime(),
     ));
@@ -62,6 +63,7 @@ abstract class BasesuscriptorForm extends BaseFormDoctrine
       'usr_grupo'          => new sfValidatorInteger(array('required' => false)),
       'usr_fecha_acceso'   => new sfValidatorDate(array('required' => false)),
       'usr_ip'             => new sfValidatorString(array('max_length' => 20, 'required' => false)),
+      'usuario_id'         => new sfValidatorInteger(array('required' => false)),
       'created_at'         => new sfValidatorDateTime(),
       'updated_at'         => new sfValidatorDateTime(),
     ));

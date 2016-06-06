@@ -25,6 +25,7 @@
  * @property integer $usr_grupo
  * @property date $usr_fecha_acceso
  * @property string $usr_ip
+ * @property integer $usuario_id
  * @property sfGuardUser $User
  * @property localidad $localidad
  * @property Doctrine_Collection $suscripcion
@@ -49,6 +50,7 @@
  * @method integer             getUsrGrupo()           Returns the current record's "usr_grupo" value
  * @method date                getUsrFechaAcceso()     Returns the current record's "usr_fecha_acceso" value
  * @method string              getUsrIp()              Returns the current record's "usr_ip" value
+ * @method integer             getUsuarioId()          Returns the current record's "usuario_id" value
  * @method sfGuardUser         getUser()               Returns the current record's "User" value
  * @method localidad           getLocalidad()          Returns the current record's "localidad" value
  * @method Doctrine_Collection getSuscripcion()        Returns the current record's "suscripcion" collection
@@ -72,6 +74,7 @@
  * @method suscriptor          setUsrGrupo()           Sets the current record's "usr_grupo" value
  * @method suscriptor          setUsrFechaAcceso()     Sets the current record's "usr_fecha_acceso" value
  * @method suscriptor          setUsrIp()              Sets the current record's "usr_ip" value
+ * @method suscriptor          setUsuarioId()          Sets the current record's "usuario_id" value
  * @method suscriptor          setUser()               Sets the current record's "User" value
  * @method suscriptor          setLocalidad()          Sets the current record's "localidad" value
  * @method suscriptor          setSuscripcion()        Sets the current record's "suscripcion" collection
@@ -166,6 +169,9 @@ abstract class Basesuscriptor extends sfDoctrineRecord
         $this->hasColumn('usr_ip', 'string', 20, array(
              'type' => 'string',
              'length' => 20,
+             ));
+        $this->hasColumn('usuario_id', 'integer', null, array(
+             'type' => 'integer',
              ));
     }
 

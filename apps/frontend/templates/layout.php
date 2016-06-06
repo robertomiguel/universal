@@ -35,6 +35,10 @@
 </table>
 </div>
 
+<div>
+  Usuario: <?php echo  $sf_user->getGuardUser()->getUsername(); ?>
+</div>
+<br />
 <div class="lateral">
  <ul id="nav">
     <li><p>Menú</p>
@@ -50,17 +54,29 @@
           <li id="<?php echo url_for('rubro/index') ?>"  onclick="menu(this);">
             <img src="/images/m3.gif"/> Rubros</li> -->
           <li id="<?php echo url_for('productor/index') ?>"  onclick="menu(this);">
-            <img src="/images/m4.png"/> Vendedores</li>
+            <img src="/images/m4.png"/> Vendedores
+          </li>
           <li id="<?php echo url_for('suscriptor/index') ?>"  onclick="menu(this);">
-            <img src="/images/m5.gif"/> Clientes</li>
+            <img src="/images/m5.gif"/> Clientes
+          </li>
           <li id="<?php echo url_for('cuota/morosos') ?>"  onclick="menu(this);">
-            <img src="/images/ok.gif"/> Marcar Pagos</li>
+            <img src="/images/ok.gif"/> Marcar Pagos
+          </li>
           <li id="<?php echo url_for('cuota/consultas') ?>"  onclick="menu(this);">
-            <img src="/images/ver.png"/> Consultas x mes</li>
+            <img src="/images/ver.png"/> Consultas x mes
+          </li>
           <li id="<?php echo url_for('cuota/liquidacion') ?>"  onclick="menu(this);">
-            <img src="/images/imprimir.gif"/> Liquidación</li>
+            <img src="/images/imprimir.gif"/> Liquidación
+          </li>
           <li id="<?php echo url_for('localidad/index') ?>"  onclick="menu(this);">
-            <img src="/images/city.png"/> Localidades</li>
+            <img src="/images/city.png"/> Localidades
+          </li>
+          <li id="<?php echo url_for('proveedor/index') ?>"  onclick="menu(this);">
+            <img src="/images/m3.gif"/> Proveedor
+          </li>
+          <li id="<?php echo url_for('facturas/index') ?>"  onclick="menu(this);">
+            <img src="/images/m3.gif"/> Facturas
+          </li>
 <!--          <li id="<?php echo url_for('ayuda/index') ?>"  onclick="menu(this);">
             <img src="/images/ayuda.png"/> Ayuda</li> -->
         </ul>

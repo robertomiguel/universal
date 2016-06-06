@@ -74,6 +74,8 @@ class productorActions extends sfActions
     if ($form->isValid())
     {
       $productor = $form->save();
+      $productor->setUsuarioId( $this->getUser()->getGuardUser()->getId() );
+      $productor->save();
 
  //     $this->redirect('productor/show?id='.$productor->getId());
      $this->redirect('productor/index');

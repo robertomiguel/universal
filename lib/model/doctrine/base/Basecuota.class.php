@@ -12,6 +12,7 @@
  * @property date $fvencimiento
  * @property date $fpago
  * @property boolean $impresa
+ * @property integer $usuario_id
  * @property suscripcion $suscripcion
  * 
  * @method integer     getSuscripcionId()  Returns the current record's "suscripcion_id" value
@@ -21,6 +22,7 @@
  * @method date        getFvencimiento()   Returns the current record's "fvencimiento" value
  * @method date        getFpago()          Returns the current record's "fpago" value
  * @method boolean     getImpresa()        Returns the current record's "impresa" value
+ * @method integer     getUsuarioId()      Returns the current record's "usuario_id" value
  * @method suscripcion getSuscripcion()    Returns the current record's "suscripcion" value
  * @method cuota       setSuscripcionId()  Sets the current record's "suscripcion_id" value
  * @method cuota       setNroCuota()       Sets the current record's "nro_cuota" value
@@ -29,6 +31,7 @@
  * @method cuota       setFvencimiento()   Sets the current record's "fvencimiento" value
  * @method cuota       setFpago()          Sets the current record's "fpago" value
  * @method cuota       setImpresa()        Sets the current record's "impresa" value
+ * @method cuota       setUsuarioId()      Sets the current record's "usuario_id" value
  * @method cuota       setSuscripcion()    Sets the current record's "suscripcion" value
  * 
  * @package    universal
@@ -68,6 +71,9 @@ abstract class Basecuota extends sfDoctrineRecord
              'type' => 'boolean',
              'notnull' => true,
              'default' => false,
+             ));
+        $this->hasColumn('usuario_id', 'integer', null, array(
+             'type' => 'integer',
              ));
     }
 

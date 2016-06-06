@@ -18,12 +18,16 @@ abstract class BaseinformectbForm extends BaseFormDoctrine
       'id'             => new sfWidgetFormInputHidden(),
       'fecha_informe'  => new sfWidgetFormDate(),
       'suscripcion_id' => new sfWidgetFormInputText(),
+      'created_at'     => new sfWidgetFormDateTime(),
+      'updated_at'     => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
       'id'             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'fecha_informe'  => new sfValidatorDate(array('required' => false)),
       'suscripcion_id' => new sfValidatorInteger(),
+      'created_at'     => new sfValidatorDateTime(),
+      'updated_at'     => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('informectb[%s]');

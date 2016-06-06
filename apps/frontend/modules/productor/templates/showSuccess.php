@@ -44,6 +44,11 @@ $consulta = Doctrine::getTable('localidad')->find($productor->getLocalidadId());
       <th>Celular:</th>
       <td><?php echo $productor->getCelular() ?></td>
     </tr>
+    <tr>
+      <th>Usuario Modifica:</th>
+      <td><?php echo Formatos::usuarioNombre($productor->getUsuarioId()); ?>
+      </td>
+    </tr>
   </tbody>
 </table>
 

@@ -225,3 +225,7 @@ box-shadow: 5px 5px 5px #666;
   border: 1px solid transparent;
   border-radius: 4px;
 }
+
+.centrar {
+  text-align: center;
+}

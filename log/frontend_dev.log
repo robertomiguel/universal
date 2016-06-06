@@ -2636,3 +2636,39 @@ Mar 26 13:50:30 symfony [info] {sfWebDebugLogger} Action "suscriptor/show" 27.76
 Mar 26 13:50:30 symfony [info] {sfWebDebugLogger} Database (Doctrine) 1.18 ms (5)
 Mar 26 13:50:30 symfony [info] {sfWebDebugLogger} View "Success" for "suscriptor/show" 15.30 ms (1)
 Mar 26 13:50:30 symfony [info] {sfWebResponse} Send content (43943 o)
+May 26 11:25:23 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 26 11:25:23 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 26 11:25:23 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'inicio',  'action' => 'index',)
+May 26 11:25:25 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 26 11:25:25 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 26 11:25:25 symfony [info] {inicioActions} Call "inicioActions->executeIndex()"
+May 26 11:25:25 symfony [info] {sfPHPView} Render "C:\webapp\universal\apps\frontend\modules/inicio/templates/indexSuccess.php"
+May 26 11:25:25 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 26 11:25:25 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 26 11:25:25 symfony [info] {sfWebDebugLogger} Configuration 921.75 ms (10)
+May 26 11:25:25 symfony [info] {sfWebDebugLogger} Factories 2573.92 ms (1)
+May 26 11:25:25 symfony [info] {sfWebDebugLogger} Action "inicio/index" 0.08 ms (1)
+May 26 11:25:25 symfony [info] {sfWebDebugLogger} View "Success" for "inicio/index" 440.43 ms (1)
+May 26 11:25:25 symfony [info] {sfWebResponse} Send content (28274 o)
+May 26 11:25:26 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 26 11:25:26 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 26 11:25:26 symfony [err] {sfError404Exception} Empty module and/or action after parsing the URL "/favicon.ico" (/).
+May 26 11:25:26 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+May 26 11:25:26 symfony [warning] {sfWebDebugLogger}  Warning at C:\webapp\universal\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\webapp\universal\lib\vendor\symfony\lib\response\sfWebResponse.class.php:409))
+May 26 11:25:26 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 26 11:25:26 symfony [info] {sfWebDebugLogger} Configuration 5.58 ms (5)
+May 26 11:25:26 symfony [info] {sfWebDebugLogger} Factories 62.75 ms (1)
+May 26 11:27:41 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 26 11:27:41 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 26 11:27:41 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'inicio',  'action' => 'index',)
+May 26 11:27:41 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 26 11:27:41 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 26 11:27:41 symfony [info] {inicioActions} Call "inicioActions->executeIndex()"
+May 26 11:27:41 symfony [info] {sfPHPView} Render "C:\webapp\universal\apps\frontend\modules/inicio/templates/indexSuccess.php"
+May 26 11:27:41 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 26 11:27:41 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 26 11:27:41 symfony [info] {sfWebDebugLogger} Configuration 12.02 ms (9)
+May 26 11:27:41 symfony [info] {sfWebDebugLogger} Factories 179.04 ms (1)
+May 26 11:27:41 symfony [info] {sfWebDebugLogger} Action "inicio/index" 0.09 ms (1)
+May 26 11:27:41 symfony [info] {sfWebDebugLogger} View "Success" for "inicio/index" 38.09 ms (1)
+May 26 11:27:41 symfony [info] {sfWebResponse} Send content (28196 o)

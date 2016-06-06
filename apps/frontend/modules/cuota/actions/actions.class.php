@@ -82,8 +82,8 @@ class cuotaActions extends sfActions
     $this->forward404Unless($cuota = Doctrine_Core::getTable('cuota')->find(array($request->getParameter('id'))), sprintf('Object cuota does not exist (%s).', $request->getParameter('id')));
     $cuota->delete();
 
-//    $this->redirect('cuota/index');
-      $this->redirect('cuota/index?id='.$cuota->getSuscripcionId());
+    //    $this->redirect('cuota/index');
+    $this->redirect('cuota/index?id='.$cuota->getSuscripcionId());
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
@@ -92,21 +92,24 @@ class cuotaActions extends sfActions
     if ($form->isValid())
     {
       $cuota = $form->save();
+      $cuota->setUsuarioId( $this->getUser()->getGuardUser()->getId() );
+      $cuota->save();
 
-//      $this->redirect('cuota/index?id='.$cuota->getId());
-//      $this->redirect('cuota/index?id='.$cuota->getSuscripcionId());
-if ($request->getParameter('volver')<>null){
-$this->redirect($request->getParameter('volver'));}
-else {$this->redirect('cuota/index?id='.$cuota->getSuscripcionId());}
-//$this->redirect($request->ge11tReferer()); 
-//      $this->redirect('cuota/index?id='.$request->getParameter('id'));
+      //      $this->redirect('cuota/index?id='.$cuota->getId());
+      //      $this->redirect('cuota/index?id='.$cuota->getSuscripcionId());
+      if ($request->getParameter('volver')<>null){
+      $this->redirect($request->getParameter('volver'));}
+      else {$this->redirect('cuota/index?id='.$cuota->getSuscripcionId());}
+      //$this->redirect($request->ge11tReferer()); 
+      //      $this->redirect('cuota/index?id='.$request->getParameter('id'));
     }
   }
   public function executeMorosos(sfWebRequest $request)
- {
+  {
     $this->total = 0;
     $this->totalcuotas = 0;
-    if ($request->getParameter("listado")=='periodo') {
+    if ($request->getParameter("listado")=='periodo')
+    {
        $this->todos = '';
        $this->periodo = 'checked';
        $this->listado='periodo';
@@ -124,11 +127,12 @@ else {$this->redirect('cuota/index?id='.$cuota->getSuscripcionId());}
     $this->respuesta =  Doctrine::getTable('cuota')->verMorosos();
 
  }
-  public function executeConsultas(sfWebRequest $request)
-  {
-    $listado = $request->getParameter("listado");
-    $this->total=0;
-    switch($listado){
+ 
+ public function executeConsultas(sfWebRequest $request)
+ {
+   $listado = $request->getParameter("listado");
+   $this->total=0;
+   switch($listado){
       case 'pagadas':
        $this->listado = "Pagadas";
        $this->lista = "pagadas";
