@@ -25,9 +25,9 @@ $pdf->SetXY(40,109);$pdf->Cell(0,0, $diaacuerdo, '', 0, '', false);
 $pdf->SetXY(33,125);$pdf->Cell(0,0, $avisodebe, '', 0, '', false);
 
 //-------------------------- BANCO
-$pdf->SetXY(123,117);$pdf->Cell(0,0, "Santander Río", '', 0, '', false);
-$pdf->SetXY(123,121);$pdf->Cell(0,0, "Cuenta NRO.: 118-17127/4", '', 0, '', false);
-$pdf->SetXY(123,125);$pdf->Cell(0,0, "CBU: 0720118520000001712740", '', 0, '', false);
+$pdf->SetXY(123,117);$pdf->Cell(0,0, "", '', 0, '', false);
+$pdf->SetXY(123,121);$pdf->Cell(0,0, "", '', 0, '', false);
+$pdf->SetXY(123,125);$pdf->Cell(0,0, "", '', 0, '', false);
 
 //-------------------------- parte dos
 $pdf->SetXY(162,213);$pdf->Cell(0,0, $fecha, '', 0, '', false);
